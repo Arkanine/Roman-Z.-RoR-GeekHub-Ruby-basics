@@ -2,8 +2,8 @@ puts 'HELLO, TALK TO ME, GRANDSON!'
 name = gets.chomp
 var = 1930
 
-while name != 'BIE'
-	if (name == name.upcase and name != 'BIE')
+while name != 'BYE'
+	if (name == name.upcase and name != 'BYE')
 		puts 'NOT EVEN ONSE WITH  ' + (var + rand(21)).to_s + ' YEAR.'
 		name = gets.chomp
 	elsif name != name.upcase
@@ -12,4 +12,4 @@ while name != 'BIE'
 	end
 end
 
-puts 'Bie, grandson! '
+puts 'Bye, grandson! '
