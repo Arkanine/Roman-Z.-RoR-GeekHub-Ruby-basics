@@ -1,6 +1,6 @@
 sec = 1000000000
 
-year = sec /60/60/24/365.to_f
+year = sec/60/60/24/365.to_f
 year_v = year/4
 
 second = sec - year_v*366*24*60*60
