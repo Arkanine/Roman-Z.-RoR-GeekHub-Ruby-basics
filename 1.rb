@@ -9,7 +9,7 @@ month_n = second/60/60/24/365 * 12.to_f     # сколько месяцев вс
 month = month_n % 12                        # остача
 
 days_n = second/60/60/24 % 365              # дней всего
-mid = 365/12.to_f                           # среднее арифметическое месяцев
+mid = 365/12.to_f                           # среднее арифметическое дней в месяце
 day = days_n % mid                          # остача
 
 puts 'Age of the person is: ' + year.to_i.to_s + ' years, ' + month.to_i.to_s  + ' months and ' + day.to_i.to_s   + ' days.'
