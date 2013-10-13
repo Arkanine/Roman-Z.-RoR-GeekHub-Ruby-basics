@@ -84,9 +84,9 @@ array[d] = a
 puts array.join(',')
 puts
 # - найти элементы, которые находятся перед минимальным числом в массиве 
-a = array.min
-b = array.index(a)
-puts array[0.. b].join(',')
+b = array.index(array.min)
+puts array[0.. b-1].join(',')
+puts array.slice(0,b).join(',') # - второй вариант
 puts
 # - необходимо найти три наименьших элемента 
 new = array.sort[0..2]
