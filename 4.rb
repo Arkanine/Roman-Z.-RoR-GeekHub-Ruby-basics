@@ -57,6 +57,8 @@ array.each do |number|
 	new.push(number/10.to_f)
 end
 puts new.join(',')
+a = array.collect { |x| x/10.to_f } # - второй вариант
+puts a.join(',')
 puts
 # - получить новый массив, который бы содержал в себе те буквы английского алфавита, порядковый номер которых есть в нашем массиве 
 alph = ('a'.. 'z').to_a
