@@ -34,6 +34,8 @@ array.each do |even|
 	end
 end
 puts new.join(',')
+a = array.select { |x| x%2==0 } # - второй вариант
+puts a.join(',')
 puts
 # - оставить только те числа, которые без остатка делятся на 3 
 new = []
@@ -43,6 +45,8 @@ array.each do |three|
 	end
 end
 puts new.join(',')
+a = array.select { |x| x%3==0 } # - второй вариант
+puts a.join(',')
 puts
 # - удалить из массива числа, которые повторяются (то есть, нужно вывести массив, в котором нет повторов)
 puts array.uniq.join(',')
