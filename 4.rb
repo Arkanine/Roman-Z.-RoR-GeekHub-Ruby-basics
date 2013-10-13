@@ -70,7 +70,7 @@ array.each do |even|
 	end
 end
 new.each do |letter|
-	letters.push(alph[letter])
+	letters.push(alph[letter-1])
 end
 puts letters.join(',')
 puts
