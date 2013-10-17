@@ -1,11 +1,10 @@
-
 class Ball
 	def initialize
 		#Положительные:
-    a = 'It is certain' #(Бесспорно)
-    b = 'It is decidedly so' #(Предрешено)
-    c = 'Without a doubt' #(Никаких сомнений)
-    d = 'Yes definitely' #(Определённо да)
+		a = 'It is certain' #(Бесспорно)
+		b = 'It is decidedly so' #(Предрешено)
+		c = 'Without a doubt' #(Никаких сомнений)
+   	d = 'Yes definitely' #(Определённо да)
     e = 'You may rely on it' #(Можешь быть уверен в этом)
 		positive = [a,b,c,d,e]
 
