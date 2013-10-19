@@ -1,6 +1,6 @@
 class Phoenix
 	def initialize
-		puts  'Enter the name of your pet!'
+		puts  'Enter the name of your phoenix!'
 		@name = gets.chomp.capitalize
 		
 		@health = 15
@@ -18,7 +18,7 @@ class Phoenix
 		food = ['insect', 'nectar', 'frog', 'fish', 'meet']
 		number = rand(0..4)
 		puts 'Hey, you, ' + @name + ', catch a piece of ' + food[number] + '!'
-		@hunger += number
+		@hunger += (number+1)
 		@health += 3
 		@shit += 2
 		if number == 2
@@ -38,9 +38,9 @@ class Phoenix
 	end
 	def sleep
 		puts 'The moon rose, ' + @name + ', time to sleep!'
-		@dream += 5
-		@mana += 5
-		@mood += 3
+		@dream += 4
+		@mana += 4
+		@mood += 2
 		timePassed
 	end
 	def remove_shit
@@ -96,8 +96,13 @@ puts 'Basic commands:
 10.kick     <-- kick your pet
 11.abuse    <-- abuse your pet
 12.help     <-- show this menu
+13.stat     <-- show stats of pet
 <--------------------------------->'
 	end
+	def stat 
+		puts ['health:' + @health.to_s, 'mana:' + @mana.to_s, 'hunger:' + @hunger.to_s, 'dream:' + @dream.to_s, 'mood:' + @mood.to_s, 'shit:' + @shit.to_s, 'disease:' + @disease.to_s].join('|')
+	end
+	
 	private
 	#_____________________________________________________
 	def timePassed
@@ -106,7 +111,7 @@ puts 'Basic commands:
 		@hunger -= 2
 		@dream -= 2
 		@mood -= 2
-		@shit += 2
+		@shit += 1
 		
 		if @hunger >= 15
 			@hunger = 15
@@ -137,7 +142,7 @@ puts 'Basic commands:
 			exit
 		end
 		if @mana >= 15
-			@mana = 15
+			@mana = 13
 			@dream += 2
 		elsif @mana <= 0
 			puts 'Magic power of ' +  @name + ' is drained. He turned to ashes.' 
@@ -188,6 +193,9 @@ while action != 'stop'
 		action = gets.chomp
 	elsif action == 'help'
 		pet.help
+		action = gets.chomp
+	elsif action == 'stat'
+		pet.stat 
 		action = gets.chomp
 	else
 		puts'Does not understand what to do!'
