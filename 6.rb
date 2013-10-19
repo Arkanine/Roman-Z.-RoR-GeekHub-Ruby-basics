@@ -142,7 +142,7 @@ puts 'Basic commands:
 			exit
 		end
 		if @mana >= 15
-			@mana = 13
+			@mana = 15
 			@dream += 2
 		elsif @mana <= 0
 			puts 'Magic power of ' +  @name + ' is drained. He turned to ashes.' 
