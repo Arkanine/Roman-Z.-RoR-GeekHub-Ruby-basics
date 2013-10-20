@@ -167,7 +167,7 @@ puts ' Basic commands:
 13.fly		 <-- permit to fly
 14.catchBird <-- order to catch the bird
 15.wait      <-- wait a bit
-<-------------------------------------->'
+<--------------------------------->'
 	end
 end
 
@@ -202,7 +202,7 @@ puts ' Basic commands:
 13.swim      <-- permit to swim
 14.catchFish <-- order to catch the fish
 15.wait      <-- wait a bit
-<-------------------------------------->'
+<--------------------------------->'
 	end
 end
 
@@ -256,63 +256,45 @@ action = gets.chomp
 while action != 'stop'
 	if action == 'feed'
 		pet.feed
-		action = gets.chomp
 	elsif action == 'walk'
 		pet.walk
-		action = gets.chomp
 	elsif action == 'sleep'
 		pet.sleep
-		action = gets.chomp
 	elsif action == 'shit'
 		pet.removeShit
-		action = gets.chomp
 	elsif action == 'treat'
 		pet.treat
-		action = gets.chomp
 	elsif action == 'wait'
 		pet.wait
-		action = gets.chomp
 	elsif action == 'play'
 		pet.play
-		action = gets.chomp
 	elsif action == 'scratch'
 		pet.scratch
-		action = gets.chomp
 	elsif action == 'kick'
 		pet.kick
-		action = gets.chomp
 	elsif action == 'abuse'
 		pet.abuse
-		action = gets.chomp
 	elsif action == 'help'
 		pet.help
-		action = gets.chomp
 	elsif action == 'stat'
 		pet.stat 
-		action = gets.chomp
 	elsif action == 'web'
 		pet.web
-		action = gets.chomp
 	elsif action == 'catchInsect'
 		pet.catchInsect
-		action = gets.chomp
 	elsif action == 'fly'
 		pet.fly 
-		action = gets.chomp
 	elsif action == 'catchBird'
 		pet.catchBird
-		action = gets.chomp
 	elsif action == 'swim'
 		pet.swim 
 		action = gets.chomp
 	elsif action == 'catchFish'
 		pet.catchFish
-		action = gets.chomp
 	elsif action == 'stat'
 		pet.stat 
-		action = gets.chomp
 	else
 		puts'Does not understand what to do!'
-		action = gets.chomp
 	end
+	action = gets.chomp
 end
