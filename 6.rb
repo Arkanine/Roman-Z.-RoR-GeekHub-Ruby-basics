@@ -1,17 +1,17 @@
-class Phoenix
+class Pet
 	def initialize
-		puts  'Enter the name of your phoenix!'
+		puts  'Enter the name of your pet!'
 		@name = gets.chomp.capitalize
 		
 		@health = 15	# здоровье
-		@mana = 15	# сила магии
+		@mana = 15		# усталость
 		@hunger = 15  	# голод
-		@dream = 15	# сон
+		@dream = 15		# сон
 		@mood = 15    	# настроение
-		@shit = 0	# уборка за животным
+		@shit = 0		# уборка за животным
 		@disease = 0  	# болезнь
 		
-		puts @name + ' is hatched from eggs!'
+		puts @name + ' is born!'
 	end
 	
 	def feed # накормить
@@ -83,29 +83,11 @@ class Phoenix
 		@mood -= 2
 		timePassed
 	end
-	def help
-puts ' Basic commands:
- 1.stop     <-- exit game
- 2.help     <-- show this menu
- 3.stat     <-- show stats of pet
- 4.feed     <-- feed your pet
- 5.walk     <-- go hunting
- 6.sleep    <-- put to sleep
- 7.shit     <-- say the pet clean up
- 8.treat    <-- mend your pet
- 9.play     <-- play with your pet
-10.scratch  <-- scratch your pet
-11.kick     <-- kick your pet
-12.abuse    <-- abuse your pet
-13.wait     <-- wait a bit
-<--------------------------------->'
-	end
 	def stat 
 		puts ['health:' + @health.to_s, 'mana:' + @mana.to_s, 'hunger:' + @hunger.to_s, 'dream:' + @dream.to_s, 'mood:' + @mood.to_s, 'shit:' + @shit.to_s, 'disease:' + @disease.to_s].join('|')
 	end
 	
 	private
-	
 	def timePassed
 		@health -= 2
 		@mana -= 2
@@ -154,7 +136,122 @@ puts ' Basic commands:
 	end
 end
 
-pet = Phoenix.new
+class Phoenix < Pet
+	def fly # плавать
+		puts @name + ', you can fly a bit.'
+		@mood += 7
+		@mana -= 2
+		timePassed
+	end
+	def catchBird
+		puts @name + ', if you hungry, catch a bird!'
+		@health += 5
+		@hunger += 5
+		@mana -=3
+		timePassed
+	end
+	def help
+puts ' Basic commands:
+ 1.stop      <-- exit game
+ 2.help      <-- show this menu
+ 3.stat      <-- show stats of pet
+ 4.feed      <-- feed your pet
+ 5.walk      <-- go hunting
+ 6.sleep     <-- put to sleep
+ 7.shit      <-- say the pet clean up
+ 8.treat     <-- mend your pet
+ 9.play      <-- play with your pet
+10.scratch   <-- scratch your pet
+11.kick      <-- kick your pet
+12.abuse     <-- abuse your pet
+13.fly		 <-- permit to fly
+14.catchBird <-- order to catch the bird
+15.wait      <-- wait a bit
+<-------------------------------------->'
+	end
+end
+
+class Dolphin < Pet
+	def swim # плавать
+		puts @name + ', you can swim a bit.'
+		@mood += 7
+		@mana -= 2
+		timePassed
+	end
+	def catchFish
+		puts @name + ', if you hungry, catch a fish!'
+		@health += 5
+		@hunger += 5
+		@mana -=3
+		timePassed
+	end
+		def help
+puts ' Basic commands:
+ 1.stop      <-- exit game
+ 2.help      <-- show this menu
+ 3.stat      <-- show stats of pet
+ 4.feed      <-- feed your pet
+ 5.walk      <-- go hunting
+ 6.sleep     <-- put to sleep
+ 7.shit      <-- say the pet clean up
+ 8.treat     <-- mend your pet
+ 9.play      <-- play with your pet
+10.scratch   <-- scratch your pet
+11.kick      <-- kick your pet
+12.abuse     <-- abuse your pet
+13.swim      <-- permit to swim
+14.catchFish <-- order to catch the fish
+15.wait      <-- wait a bit
+<-------------------------------------->'
+	end
+end
+
+class Spider < Pet
+	def web # паутина
+		puts @name + ', you can cobweb a bit.'
+		@mood += 7
+		@mana -= 2
+		timePassed
+	end
+	def catchInsect
+		puts @name + ', if you hungry, catch a insect!'
+		@health += 5
+		@hunger += 5
+		@mana -=3
+		timePassed
+	end
+		def help
+puts ' Basic commands:
+ 1.stop        <-- exit game
+ 2.help        <-- show this menu
+ 3.stat        <-- show stats of pet
+ 4.feed        <-- feed your pet
+ 5.walk        <-- go hunting
+ 6.sleep       <-- put to sleep
+ 7.shit        <-- say the pet clean up
+ 8.treat       <-- mend your pet
+ 9.play        <-- play with your pet
+10.scratch     <-- scratch your pet
+11.kick        <-- kick your pet
+12.abuse       <-- abuse your pet
+13.web         <-- permit to web
+14.catchInsect <-- order to catch the insect
+15.wait        <-- wait a bit
+<------------------------------------------>'
+	end
+end
+
+puts 'Enter the class of your pet: phoenix, dolphin or spider.'
+clas = gets.chomp
+
+if clas == 'phoenix'
+	pet = Phoenix.new
+elsif clas == 'dolphin'
+	pet = Dolphin.new
+elsif clas == 'spider'
+	pet = Spider.new
+end
+
 action = gets.chomp
 while action != 'stop'
 	if action == 'feed'
@@ -189,6 +286,27 @@ while action != 'stop'
 		action = gets.chomp
 	elsif action == 'help'
 		pet.help
+		action = gets.chomp
+	elsif action == 'stat'
+		pet.stat 
+		action = gets.chomp
+	elsif action == 'web'
+		pet.web
+		action = gets.chomp
+	elsif action == 'catchInsect'
+		pet.catchInsect
+		action = gets.chomp
+	elsif action == 'fly'
+		pet.fly 
+		action = gets.chomp
+	elsif action == 'catchBird'
+		pet.catchBird
+		action = gets.chomp
+	elsif action == 'swim'
+		pet.swim 
+		action = gets.chomp
+	elsif action == 'catchFish'
+		pet.catchFish
 		action = gets.chomp
 	elsif action == 'stat'
 		pet.stat 
