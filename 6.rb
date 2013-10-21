@@ -4,11 +4,11 @@ class Pet
 		@name = gets.chomp.capitalize
 		
 		@health = 15	# здоровье
-		@mana = 15		# усталость
+		@mana = 15      # усталость
 		@hunger = 15  	# голод
-		@dream = 15		# сон
+		@dream = 15     # сон
 		@mood = 15    	# настроение
-		@shit = 0		# уборка за животным
+		@shit = 0       # уборка за животным
 		@disease = 0  	# болезнь
 		
 		puts @name + ' is born!'
@@ -277,22 +277,21 @@ while action != 'stop'
 	elsif action == 'help'
 		pet.help
 	elsif action == 'stat'
-		pet.stat 
+		pet.stat
 	elsif action == 'web'
 		pet.web
 	elsif action == 'catchInsect'
 		pet.catchInsect
 	elsif action == 'fly'
-		pet.fly 
+		pet.fly
 	elsif action == 'catchBird'
 		pet.catchBird
 	elsif action == 'swim'
-		pet.swim 
-		action = gets.chomp
+		pet.swim
 	elsif action == 'catchFish'
 		pet.catchFish
 	elsif action == 'stat'
-		pet.stat 
+		pet.stat
 	else
 		puts'Does not understand what to do!'
 	end
